@@ -8,7 +8,7 @@ import com.spring.entity.IplTeam;
 import com.spring.repository.IIplTeamRepository;
 import com.spring.vo.IplTeamVo;
 @Service
-public class IplServiceImpl implements IIplTeamService {
+public class IplTeamServiceImpl implements IIplTeamService {
 
 	@Autowired
 	private IIplTeamRepository teamRepo;
@@ -19,6 +19,14 @@ public class IplServiceImpl implements IIplTeamService {
 		BeanUtils.copyProperties(teamVo, team);
 		Integer id = teamRepo.save(team).getTid();
 		return "Team "+team.getTname()+" is saved having team Id : "+id;
+	}
+
+	@Override
+	public IplTeamVo getTeamById(Integer tid) throws IllegalAccessException {
+		IplTeam team = teamRepo.findById(tid).orElseThrow(()->new IllegalAccessException("Invalid id !!"));
+		IplTeamVo teamVo = new IplTeamVo();
+		BeanUtils.copyProperties(team, teamVo);
+		return teamVo;
 	}
 
 }

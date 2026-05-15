@@ -14,8 +14,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class IplPlayersVo {
 
-		
+        private Integer pid;		
 		private String pname;
 		private String role;
 		private Integer age;
+		private Integer tid;
+		private IplTeamVo teamVo;
 }

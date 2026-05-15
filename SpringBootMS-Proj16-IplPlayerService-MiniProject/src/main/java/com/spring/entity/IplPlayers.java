@@ -37,6 +37,9 @@ public class IplPlayers {
 	@NonNull
 	@Column(length=30)
 	private Integer age;
+	@NonNull
+	@Column(length=30)
+	private Integer tid;
 	
 	//Metadata Properties
 	@CreationTimestamp
