@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.spring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootMsProj16ConfigServerMiniProjectApplicationTests {
+class SpringBootMsProj16AdminServerMiniProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
