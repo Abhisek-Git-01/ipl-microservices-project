@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spring.service.IplPlayerServiceImpl;
 import com.spring.vo.IplPlayersVo;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 
 @RestController
 @RequestMapping("/player-api")
@@ -30,9 +32,15 @@ public class IplPlayersOperationRestController {
 	}
 	
 	@GetMapping("/find/{pid}")
+	@CircuitBreaker(name="IplPlayerService",fallbackMethod="getPlayerByIdFallback")
 	public ResponseEntity<IplPlayersVo> getPlayerById(@PathVariable Integer pid) throws IllegalAccessException{
 	
 		IplPlayersVo playerVo = service.findPlayerById(pid);
 		return new ResponseEntity<IplPlayersVo>(playerVo,HttpStatus.OK);
+	}
+	
+	public ResponseEntity<String> getPlayerByIdFallback(Integer pid, Exception e){
+		System.out.println("IplPlayersOperationRestController.getPlayerBuIdFallback()");
+		return new ResponseEntity<String>("Service Down Please try after some time !!!!",HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
