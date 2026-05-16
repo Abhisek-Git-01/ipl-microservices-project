@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/github/repo-size/Abhisek-Git-01/ipl-microservices-project?color=blue">
 <img src="https://img.shields.io/github/last-commit/Abhisek-Git-01/ipl-microservices-project?color=green">
 <img src="https://img.shields.io/github/stars/Abhisek-Git-01/ipl-microservices-project?style=social">
-<img src="https://img.shields.io/badge/Java-17-orange">
+<img src="https://img.shields.io/badge/Java-21-orange">
 <img src="https://img.shields.io/badge/SpringBoot-3.x-brightgreen">
 <img src="https://img.shields.io/badge/Microservices-Architecture-blueviolet">
 <img src="https://img.shields.io/badge/Logging-ELKStack-yellow">
